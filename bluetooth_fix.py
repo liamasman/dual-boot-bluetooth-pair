@@ -61,8 +61,8 @@ def _format_ltk(ltk):
     return ltk.lstrip('hex:').upper().replace(',', '')
 
 
-def _format_csrk(csrk):
-    """ Convert CSRK to uppercase and remove commas."""
+def _format_irk(csrk):
+    """ Convert IRK to uppercase and remove commas."""
     return csrk.replace('hex:', '').replace(',', '').upper()
 
 
@@ -80,9 +80,9 @@ def _process_reg_file(config):
         print('  EncSize: 16')
         print('  EDiv: {}'.format(_format_ediv(config[section]['EDIV'])))
         print('  Rand: {}'.format(_format_erand(config[section]['ERand'])))
-        print('LocalSignatureKey')
+        print('IdentitiyResolvingKey')
         print('  Key: {}'.format(
-            _format_csrk(config[section]['CSRK'])))
+            _format_irk(config[section]['IRK'])))
         print('\n====================================\n')
 
 
